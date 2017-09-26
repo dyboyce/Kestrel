@@ -21,8 +21,9 @@ public class PresenterClass {
     private ArrayList<String> PairsOnHand;
     private Context context;
     private Activity activity;
-    private String correct;
     private DataBaseInteractor dbInteractor;
+    private String nextImages;
+    private String correct;
 
     public PresenterClass(Context cont, Activity acti, DataBaseInteractor dbi){
         this.context = cont;
@@ -36,8 +37,14 @@ public class PresenterClass {
     }
 
     public void updatePresenter(String clicked){
-        //print clicked
-        Log.d("DEBUG", "SetNewImagesCalled");
+        //if correct, display good/bad sign for .5 seconds
+        //turn off display
+        //parse next string
+        //display next images
+        //fetch more from db if needed
+        Log.d("DEBUG", "SetNewImagesCalled by: "+clicked);
+
+
         setnewImages("frnk","tcpl");
     }
 

@@ -30,11 +30,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void buttoninput(View v){
-
-
-        Presenter.updatePresenter("tested");
-
+    public void buttoninputTop(View v){
+        Presenter.updatePresenter("top");
+    }
+    public void buttoninputBot(View v){
+        Presenter.updatePresenter("bot");
     }
 
 

@@ -54,7 +54,7 @@ public class DataBaseInteractor {
 
     public String[] getNextImages(){
         String[] retval = new String[4];
-        
+
         retval[0] = AjdsTemp.get(3);
 
 
