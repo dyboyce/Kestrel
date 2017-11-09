@@ -55,7 +55,17 @@ public class DataBaseInteractor {
     public String[] getNextImages(){
         String[] retval = new String[4];
 
-        retval[0] = AjdsTemp.get(3);
+        int rando = (int)(Math.random()*AjdsTempSize);
+        retval[0] = AjdsTemp.get(rando);
+
+        rando = (int)(Math.random()*TmpStoSize);
+        retval[1] = TempStorage.get(rando);
+        rando = (int)(Math.random()*TmpStoSize);
+        retval[2] = TempStorage.get(rando);
+
+        retval[3] = Integer.toString(rando % 2);
+
+
 
 
         return retval;

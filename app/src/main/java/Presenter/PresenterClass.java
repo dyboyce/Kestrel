@@ -2,8 +2,11 @@ package Presenter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.Handler;
 import android.util.Log;
 import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import net.dboyce.kestrel.R;
 
@@ -42,10 +45,36 @@ public class PresenterClass {
         //parse next string
         //display next images
         //fetch more from db if needed
+
+        if(clicked.equals(correct)){
+            final Toast toast = Toast.makeText(context, "Woo you got it right!!", Toast.LENGTH_SHORT);
+            toast.show();
+
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    toast.cancel();
+                }
+            }, 1000);
+        }
+
+
+
         Log.d("DEBUG", "SetNewImagesCalled by: "+clicked);
+        TextView txtview = (TextView) activity.findViewById(R.id.Text1);
+
+        String[] neo = dbInteractor.getNextImages();
 
 
-        setnewImages("frnk","tcpl");
+        setnewImages(neo[1], neo[2]);
+        txtview.setText("Which picture is "+neo[0]+" ?");
+        if(neo[3].equals("0")){
+            correct = "top";
+
+        }else{
+            correct = "bot";
+        }
     }
 
 
